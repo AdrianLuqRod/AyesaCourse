@@ -70,4 +70,30 @@ public class Rectangulo {
         return true;
     }
 
+    // ? El profesor lo hace aqui dentro de la misma clase el main por algun motivo,
+    // queda feo. Muy feo de hecho.
+    public static void main(String[] args) {
+        Rectangulo r1 = new Rectangulo(2, 3);
+        Rectangulo r2 = new Rectangulo(20, 30);
+        Rectangulo r3 = new Rectangulo(200, 300);
+        Rectangulo[] rectanglesList = { r1, r2, r3 };
+
+        System.out.println(r1.calcularPerimetro() + "<-- Perimetro de r1");
+        System.out.println(r1.calcularArea() + "<-- Area de r1");
+        System.out.println(r2.calcularPerimetro() + "<-- Perimetro de r2");
+        System.out.println(r2.calcularArea() + "<-- Area de r2");
+        System.out.println(r3.calcularPerimetro() + "<-- Perimetro de r3");
+        System.out.println(r3.calcularArea() + "<-- Area de r3");
+        System.out.println("La mayor area es: " + comparaRectangulos(rectanglesList));
+    }
+
+    public static Integer comparaRectangulos(Rectangulo[] rectanglesList) {
+        Integer mayorArea = 0;
+        for (Rectangulo rectangulo : rectanglesList) {
+            if (rectangulo.calcularArea() > mayorArea) {
+                mayorArea = rectangulo.calcularArea();
+            }
+        }
+        return mayorArea;
+    }
 }
