@@ -31,29 +31,6 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try (FileReader fr = new FileReader(archivoPares);
-                BufferedReader brPares = new BufferedReader(fr)) {
-            System.out.println("Pares: ");
-            String linea;
-            while ((linea = brPares.readLine()) != null) {
-                System.out.println(linea);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        }
-
-        try (FileReader fr = new FileReader(archivoImpares);
-                BufferedReader brImpares = new BufferedReader(fr)) {
-            System.out.println("Impares: ");
-            String linea;
-            while ((linea = brImpares.readLine()) != null) {
-                System.out.println(linea);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        }
     }
 
 }
