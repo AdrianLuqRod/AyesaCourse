@@ -1,4 +1,4 @@
-package OrdenarMatriz;
+package _02OrdenarMatriz;
 
 import java.util.Arrays;
 

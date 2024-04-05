@@ -1,4 +1,4 @@
-package primeraClase;
+package _01primeraClase;
 
 public class PruebaHermano {
     public static void main(String[] args) {
