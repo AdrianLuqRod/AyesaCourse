@@ -6,7 +6,8 @@ public class Profesor extends Persona {
     private int sueldo;
     private Alumno[] alumnos;
 
-    public Profesor(int sueldo, Alumno[] alumnos) {
+    public Profesor(String nombre, int sueldo, Alumno[] alumnos) {
+        super(nombre);
         this.sueldo = sueldo;
         this.alumnos = alumnos;
     }
