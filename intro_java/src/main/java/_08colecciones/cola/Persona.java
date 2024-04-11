@@ -1,4 +1,4 @@
-package _08colecciones;
+package _08colecciones.cola;
 
 public class Persona {
     private String nombre;

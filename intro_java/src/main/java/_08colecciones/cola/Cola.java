@@ -1,4 +1,4 @@
-package _08colecciones;
+package _08colecciones.cola;
 
 import java.util.ArrayList;
 import java.util.List;

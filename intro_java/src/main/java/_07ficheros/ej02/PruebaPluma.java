@@ -9,7 +9,9 @@ public class PruebaPluma {
         Pluma pluma = new Pluma(papel);
         try {
             pluma.escribirPorConsola();
+            System.out.println("--------------------");
             pluma.escribir("Hola, esto es un texto de prueba.");
+            System.out.println("--------------------");
             pluma.leerFichero();
         } catch (Exception e) {
             System.out.println(e);
