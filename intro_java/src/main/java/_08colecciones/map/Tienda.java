@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Tienda {
-    Map<String, Articulo> articulos;
+    private Map<String, Articulo> articulos;
 
     public Tienda() {
-        articulos = new HashMap<>();
+        articulos = new HashMap<String, Articulo>();
     }
 
     public Map<String, Articulo> getArticulos() {
@@ -29,7 +29,13 @@ public class Tienda {
     public void comprarArticulo(String nombreArticulo) {
         Articulo a = articulos.get(nombreArticulo);
         if (a != null) {
-            a.setCantidad(a.getCantidad() - 1);
+            if (a.getCantidad() == 0) {
+                System.out.println("El artículo está agotado.");
+                return;
+            } else {
+                a.setCantidad(a.getCantidad() - 1);
+            }
+
         } else {
             System.out.println("El artículo no existe en la tienda.");
         }
