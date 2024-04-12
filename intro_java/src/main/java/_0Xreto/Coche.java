@@ -1,7 +1,5 @@
 package _0Xreto;
 
-import java.util.Comparator;
-
 public class Coche implements Comparable<Coche> {
     private String marca;
     private Integer precio, numKms;
