@@ -5,9 +5,13 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javax.swing.plaf.nimbus.State;
+
 public class Main {
     public static void main(String[] args) {
         createNewDatabase("test.db");
+        connect();
+
     }
 
     public static void createNewDatabase(String fileName) {
@@ -22,6 +26,22 @@ public class Main {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
+    }
+
+    private static Connection connect() {
+        String url = "jdbc:sqlite:intro_java/src/main/java/_12conexionBBDD/test.db";
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url);
+            System.out.println("Conexión a SQLite establecida.");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return conn;
+    }
+
+    public void insert(String name, double capacity) {
 
     }
 }
