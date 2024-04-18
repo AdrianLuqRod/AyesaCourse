@@ -11,7 +11,7 @@ public class Main {
     }
 
     public static void createNewDatabase(String fileName) {
-        String url = "jdbc:sqlite:C:/sqlite/db/" + fileName;
+        String url = "jdbc:sqlite:intro_java/src/main/java/_12conexionBBDD/" + fileName;
 
         try (Connection conn = DriverManager.getConnection(url)) {
             if (conn != null) {
