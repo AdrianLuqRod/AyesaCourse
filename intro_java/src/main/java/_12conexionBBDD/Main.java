@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 public class Main {
     public static void main(String[] args) {
         createNewDatabase("test.db");
         connect();
+        insert("Raw Materials", 3000);
 
     }
 
@@ -39,7 +41,15 @@ public class Main {
         return conn;
     }
 
-    public void insert(String name, double capacity) {
-
+    public static void insert(String name, double capacity) {
+        String sql = "INSERT INTO warehouses(name,capacity) VALUES(?,?)";
+        try (Connection conn = connect();
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, name);
+            pstmt.setDouble(2, capacity);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
